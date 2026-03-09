@@ -615,6 +615,42 @@
   background: rgba(255,255,255,0.4);
 }
 
+/* Скрываем стрелки на мобильных устройствах */
+@media (max-width: 768px) {
+  .carousel-btn {
+    display: none;
+  }
+}
+
+/* Показываем стрелки на десктопе (по умолчанию) */
+@media (min-width: 769px) {
+  .carousel-btn {
+    display: flex; /* или inline-flex, как у тебя */
+  }
+
+  /* Эффекты при наведении */
+  .carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+  }
+
+  /* Добавим плавный переход */
+  .carousel-btn {
+    transition: all 0.3s ease;
+  }
+}
+
+/* DESKTOP: смещаем Group 591.png ниже */
+.mascot-bottom {
+  position: absolute;   /* остаётся абсолютной */
+  bottom: -1020px;       /* смещаем вниз, значение можно подправить по дизайну */
+  right: 100%;           /* центрируем по горизонтали */
+  
+  width: 450px;         /* уменьшаем размер, если нужно */
+  height: auto;
+  z-index: 5;
+}
+
 
 /* ========================= */
 /* MOBILE ADAPTIVE */
@@ -939,6 +975,18 @@ margin-top:20px;
   80%{transform:translate(1px,-1px)}
   100%{transform:translate(0)}
 
+}
+
+/* Мобильная версия значков магазинов */
+@media (max-width: 768px) {
+  .store-badges {
+    align-items: center;      /* выравнивание по центру */
+  }
+
+  .store-badges .store-photo {
+    width: 120px;             /* уменьшаем ширину */
+    height: 36px;             /* уменьшаем высоту */
+  }
 }
 
 
